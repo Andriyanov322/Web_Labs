@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "images/icon.png" rel="icon" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/dessin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Андриянов Максим ПИ-322</title>
+</head>
+<body>
+    <a class="button1" href="lab-2.html"><h2>Вернуться к списку</h2></a>
+    <h2>Калькулятор на jQuery</h2>
+    <div id="calculator">
+        <div id="result"></div>
+
+        <span class="key">7</span>
+        <span class="key">8</span>
+        <span class="key">9</span>
+        <span class="key">C</span>
+        <span class="key">4</span>
+        <span class="key">5</span>
+        <span class="key">6</span>
+        <span class="key">/</span>
+        <span class="key">1</span>
+        <span class="key">2</span>
+        <span class="key">3</span>
+        <span class="key">*</span>
+        <span class="key">0</span>
+        <span class="key">+</span>
+        <span class="key equal-key">=</span>
+        <span class="key">-</span>
+        <span class="key"><<</span>
+    </div>
+    <script>
+        let result = '0';   
+        $('#result').text(result);
+        $('.key').each(function(index, key){       
+            $(this).click(function(e){
+                if(result == '0') result = '';
+                if($(this).text() == 'C')
+                {
+                    result = '0';
+                    $('#result').text(result);
+                }
+                else if($(this).text() == '=')
+                {
+                    result = eval(result);
+                    $('#result').text(result);
+                    result = '0';
+                } else if($(this).text() == '<<') {
+                    result = result.substring(0, result.length-1);
+                    $('#result').text(result);
+                }
+                else
+                {
+                    result += $(this).text();
+                    $('#result').text(result);
+                }
+                e.preventDefault()
+            })
+        })
+    </script>
+</body>
+<style>
+    #calculator {
+        margin: 0 auto;
+        width: 400px;
+        background-color: #800080;
+        padding: 20px;
+        border-radius: 6px;
+    }
+
+    #result {
+        width: 390px;
+        height: 50px;
+        background-color: white;
+        margin-bottom: 15px;
+        text-align: left;
+        padding: 5px;
+        font-size: 50px;
+        
+    }
+
+    .key {
+        width: 90px;
+        background-color: white;
+        display: inline-block;
+        margin-bottom: 10px;
+        text-align: center;
+        padding: 1px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+</style>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "images/icon.png" rel="icon" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/dessin.css">
+    <title>Андриянов Максим ПИ-322</title>
+</head>
+<body>
+    <a class="button1" href="lab-1.html"><h2>Вернуться к списку</h2></a>
+    <p>Человек он умный, но чтоб умно поступать — одного ума мало</p>
+    <script>
+        var x, y;
+        var password = "12345";
+        x=parseInt(prompt("Введите значение х",''));
+        y=parseInt(prompt("Введите значение у",'')); 
+        if (x<y) {
+            alert(" Максимальное число - y");
+        } else if (x == y) {
+            alert("Введенные числа равны");
+        } else {
+            alert("Максимальное число - x");
+        }
+        if (prompt('Введите ваш пароль:') == password) {
+            alert('Пароль верный');
+        } else {
+            alert('Пароль неверный');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "images/icon.png" rel="icon" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/dessin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Андриянов Максим ПИ-322</title>
+</head>
+<body>
+    <a class="button1" href="lab-2.html"><h2>Вернуться к списку</h2></a>
+    <h2>Какую оценку вы получили на последнем экзамене?</h2>
+    <label for="otl">Отлично</label>
+    <input type="radio" id="otl" name="radio" value="1">
+    <br>
+    <label for="hor">Хорошо</label>
+    <input type="radio" id="hor" name="radio" value="2">
+    <br>
+    <label for="ud">Удовлетворительно</label>
+    <input type="radio" id="ud" name="radio" value="3">
+    <br>
+    <input type="button" id="calc" value="Посчитать">
+    <br>
+    <br>
+    <p id="otl-stat"> </p>
+    <p id="hor-stat"> </p>
+    <p id="ud-stat"> </p>
+    <script>
+    $(document).ready(function () {
+        var otl = 0;
+        var hor = 0;
+        var ud = 0;
+        $("#calc").on("click", function () {
+            var otvet = $("input[name='radio']:checked").val();
+            
+            if (otvet == "1") 
+            {
+                otl=otl+1;
+            } else if (otvet == "2") 
+            {
+                hor=hor+1;
+            } else if (otvet == "3") 
+            {
+                ud=ud+1;
+            }
+
+            allOtv=otl+hor+ud;
+            otlKol=otl/allOtv*100;
+            horKol=hor/allOtv*100;
+            udKol=ud/allOtv*100;
+
+            $("#otl-stat").html('Сдали на 5: ' + otlKol.toFixed() + '%');
+            $("#hor-stat").html('Сдали на 4: ' + horKol.toFixed() + '%');
+            $("#ud-stat").html('Сдали на 3: ' + udKol.toFixed() + '%');
+        });
+    });
+    </script>
+</body>
+</html>

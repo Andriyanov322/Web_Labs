@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "images/icon.png" rel="icon" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/dessin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Андриянов Максим ПИ-322</title>
+</head>
+<body>
+    <a class="button1" href="lab-2.html"><h2>Вернуться к списку</h2></a>
+    <p>Изменение положения картинки</p>
+    <button id="left">Влево</button>
+    <button id="right">Вправо</button>
+    <button id="up">Вверх</button>
+    <button id="down">Вниз</button>
+    <br>
+    <img src="images/dog.png" alt="img" id="img" style="position: absolute; width: 100px;">
+    <script>
+        $(document).ready(function () {
+        $("#left").on("click", function () {
+            $("#img").animate({
+            "left": "-=100px"
+            }, 500);
+        });
+        $("#right").on("click", function () {
+            $("#img").animate({
+            "left": "+=100px"
+            }, 500);
+        });
+        $("#up").on("click", function () {
+            $("#img").animate({
+            "top": "-=100px"
+            }, 500);
+        });
+
+        $("#down").on("click", function () {
+            $("#img").animate({
+            "top": "+=100px"
+            }, 500);
+        });
+    });
+    </script>
+</body>
+</html>

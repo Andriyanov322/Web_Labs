@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "images/icon.png" rel="icon" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/dessin.css">
+    <title>Андриянов Максим ПИ-322</title>
+    <script>
+        function razdel() {
+            predm = new Array("физика","математика","химия","обществознание", "литература");
+            tech = new Array();
+            gum = new Array();
+            tech=predm.slice(0,3);
+            gum=predm.slice(3,5);
+            document.writeln("<p>Точные предметы: "+ tech +"</p>"); 
+            document.writeln("<p>Гуманитарные предметы: "+ gum +"</p>"); 
+        }
+    </script>
+</head>
+<body>
+    <a class="button1" href="lab-1.html"><h2>Вернуться к списку</h2></a>
+    <h3>Школьные предметы</h3>
+    <script>
+        razdel();
+    </script>
+</body>
+</html>
